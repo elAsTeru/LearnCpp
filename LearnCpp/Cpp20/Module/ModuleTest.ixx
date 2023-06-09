@@ -15,6 +15,6 @@ namespace Cpp20Test
 	/// </summary>
 	export void Greeting()
 	{
-		std::cout << greet << std::endl;
+		std::cout << greet << '\n';
 	}
 }

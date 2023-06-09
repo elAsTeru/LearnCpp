@@ -48,11 +48,12 @@ namespace CppOther
 		auto operator<=>(const Integer&)const = default;
 
 		// フレンドな演算子のオーバーロード
+		// メンバー関数では実装できないの部分を定義するときに、exportすれば外部で使用可能。
 
-		//friend Integer operator+(const Integer&, int);	// メンバー関数で実装することもできる。
-		//friend Integer operator+(int, const Integer&);	// メンバー関数では実装できない。
-		//friend Integer operator-(const Integer&, int);	// メンバー関数で実装することもできる。
-		//friend Integer operator-(int, const Integer&);	// メンバー関数では実装できない。
+		friend Integer operator+(const Integer&, int);	// メンバー関数で実装することもできる。
+		friend Integer operator+(int, const Integer&);	// メンバー関数では実装できない。
+		friend Integer operator-(const Integer&, int);	// メンバー関数で実装することもできる。
+		friend Integer operator-(int, const Integer&);	// メンバー関数では実装できない。
 
 		// コピー代入演算子とムーブ代入演算子
 
@@ -186,27 +187,27 @@ namespace CppOther
 	//	return { _rhs <= *this };
 	//}
 
-	//Integer operator+(const Integer& _lhs, int _rhs)
-	//{
-	//	// フレンド関数なので、プライベートメンバーにアクセス可能
-	//	return Integer{ _lhs.value + _rhs };
-	//}
+	Integer operator+(const Integer& _lhs, int _rhs)
+	{
+		// フレンド関数なので、プライベートメンバーにアクセス可能
+		return Integer{ _lhs.value + _rhs };
+	}
 
-	//// Integerのインスタンスが右辺に来る+はこのオーバーロードが使用される。
-	//Integer operator+(int _lhs, const Integer& _rhs)
-	//{
-	//	return Integer{ _lhs + _rhs.value };
-	//}
+	// Integerのインスタンスが右辺に来る+はこのオーバーロードが使用される。
+	export Integer operator+(int _lhs, const Integer& _rhs)
+	{
+		return Integer{ _lhs + _rhs.value };
+	}
 
-	//Integer operator-(const Integer& _lhs, int _rhs)
-	//{
-	//	return Integer{ _lhs.value - _rhs };
-	//}
+	Integer operator-(const Integer& _lhs, int _rhs)
+	{
+		return Integer{ _lhs.value - _rhs };
+	}
 
-	//Integer operator-(int _lhs, const Integer& _rhs)
-	//{
-	//	return Integer{ _lhs - _rhs.value };
-	//}
+	export Integer operator-(int _lhs, const Integer& _rhs)
+	{
+		return Integer{ _lhs - _rhs.value };
+	}
 
 	// コピー代入演算子はコピー元のオブジェクトを変更できない
 	// const参照で受け取る
