@@ -1,7 +1,7 @@
 export module GameObject;
 import ComponentSystem;
 
-export class GameObject : public ComponentSystem::Holder
+export class GameObject : public ComponentSystem::Holder<GameObject>
 {
 public:
 	GameObject(const char* _name = "anonymous", const char* _tag = "untagged") :

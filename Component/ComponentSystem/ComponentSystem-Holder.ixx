@@ -6,10 +6,10 @@ import <vector>;
 namespace ComponentSystem
 {
 	// コンポーネント使用側に継承させる。
-	export class Holder
+	export template <class T> class Holder
 	{
 	protected:
-		std::vector<std::shared_ptr<Base>> components;
+		std::vector<std::shared_ptr<Base<T>>> components;
 
 	public:
 		virtual ~Holder()
@@ -21,13 +21,15 @@ namespace ComponentSystem
 		}
 
 		/// <summary> コンポーネントの追加 /// </summary>
-		template <class T> T* AddComp()
+		template <class T> std::shared_ptr<T> AddComp()
 		{
-			std::shared_ptr<T> comp = std::make_shared<T>();
+			std::shared_ptr<Base> comp = std::make_shared<T>();
 			this->components.emplace_back(comp);
-			this->components.back()->parent = this;
+
+			//this->components.back()->parent = this;
 			this->components.back()->Start();
-			return comp.get();
+
+			return std::weak_ptr<T>(comp);
 		}
 
 		/// <summary> コンポーネントの取得 </summary>

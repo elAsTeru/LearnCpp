@@ -1,2 +1,2 @@
-export module Component;
+﻿export module Component;
 export import :SelfIntroduction;

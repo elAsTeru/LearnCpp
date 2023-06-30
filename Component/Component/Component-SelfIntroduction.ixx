@@ -1,10 +1,11 @@
-export module Component:SelfIntroduction;
+﻿export module Component:SelfIntroduction;
 import ComponentSystem;
+import GameObject;
 import <iostream>;
 
 namespace Component
 {
-	export class SelfIntroduction : public ComponentSystem::Base
+	export class SelfIntroduction : public ComponentSystem::Base<GameObject>
 	{
 	public:
 		SelfIntroduction(){}
@@ -12,7 +13,8 @@ namespace Component
 
 		void Greeting()
 		{
-			std::cout << "Hello,\n";
+			std::cout << "Hello, My name is ";
+			//std::cout << this->parent->name << '\n';
 		}
 	};
 }

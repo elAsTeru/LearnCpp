@@ -1,9 +1,10 @@
-export module ComponentSystem:Base;
+ï»¿export module ComponentSystem:Base;
+import <memory>;
 
 namespace ComponentSystem
 {
-	// ƒRƒ“ƒ|[ƒlƒ“ƒg‘¤‚ÉŒp³‚³‚¹‚éB
-	export class Base
+	// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆå´ã«ç¶™æ‰¿ã•ã›ã‚‹ã€‚
+	export template <class T> class Base
 	{
 	public:
 		Base() :
@@ -11,7 +12,7 @@ namespace ComponentSystem
 		{}
 		virtual ~Base() {}
 
-		void* parent;	// ƒRƒ“ƒ|[ƒlƒ“ƒg‚ğ•Û—L‚·‚éƒNƒ‰ƒX(voidŒ^‚Í‰¼’u‚«)
+		std::shared_ptr<T> parent;	// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®æ‰€æŒè€…
 
 		virtual void Start() {}
 	};
