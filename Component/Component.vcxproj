@@ -151,8 +151,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ComponentSystem\ComponentSystem-Base.ixx" />
-    <ClCompile Include="ComponentSystem\ComponentSystem-Holder.ixx" />
+    <ClCompile Include="ComponentSystem\ComponentSystem-Component.ixx" />
+    <ClCompile Include="ComponentSystem\ComponentSystem-Owner.ixx" />
     <ClCompile Include="ComponentSystem\ComponentSystem.ixx" />
     <ClCompile Include="Component\Component-SelfIntroduction.ixx" />
     <ClCompile Include="Component\Component.ixx" />

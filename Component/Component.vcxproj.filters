@@ -18,10 +18,10 @@
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="ComponentSystem\ComponentSystem-Base.ixx">
+    <ClCompile Include="ComponentSystem\ComponentSystem-Component.ixx">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="ComponentSystem\ComponentSystem-Holder.ixx">
+    <ClCompile Include="ComponentSystem\ComponentSystem-Owner.ixx">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="ComponentSystem\ComponentSystem.ixx">

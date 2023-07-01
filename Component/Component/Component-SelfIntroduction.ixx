@@ -5,16 +5,23 @@ import <iostream>;
 
 namespace Component
 {
-	export class SelfIntroduction : public ComponentSystem::Base<GameObject>
+	export class SelfIntroduction : public ComponentSystem::Component<GameObject>
 	{
 	public:
 		SelfIntroduction(){}
-		~SelfIntroduction(){}
+		~SelfIntroduction()
+		{
+			std::cout << this->owner->name << " ended Component\n";
+		}
+
+		void Start()override
+		{
+			std::cout << this->owner->name << " started SelfIntroduction component.\n";
+		}
 
 		void Greeting()
 		{
-			std::cout << "Hello, My name is ";
-			//std::cout << this->parent->name << '\n';
+			std::cout << "Hello, My name is " << this->owner->name << ".\n";
 		}
 	};
 }
