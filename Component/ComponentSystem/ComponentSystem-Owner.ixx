@@ -1,10 +1,10 @@
-export module ComponentSystem:Owner;
+ï»¿export module ComponentSystem:Owner;
 import :Component;
 import <vector>;
 
 namespace ComponentSystem
 {
-	// ƒRƒ“ƒ|[ƒlƒ“ƒgg—p‘¤‚ÉŒp³‚³‚¹‚éB
+	// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆä½¿ç”¨å´ã«ç¶™æ‰¿ã•ã›ã‚‹ã€‚
 	// O : owner class
 	// C : component class
 	export template <class O>
@@ -17,7 +17,7 @@ namespace ComponentSystem
 		Owner() {}
 		virtual ~Owner()
 		{
-			// ‹t‡íœ
+			// é€†é †å‰Šé™¤
 			for (auto itr = this->components.rbegin(); itr != this->components.rend(); ++itr)
 			{
 				if (*itr != nullptr)
@@ -32,7 +32,7 @@ namespace ComponentSystem
 		template <class C> C* AddComp()
 		{
 			C* comp{ new C };
-			// Šî’êƒNƒ‰ƒX‚ªComponentSystem::Component‚©ƒ`ƒFƒbƒN
+			// åŸºåº•ã‚¯ãƒ©ã‚¹ãŒComponentSystem::Componentã‹ãƒã‚§ãƒƒã‚¯
 			if (dynamic_cast<Component<O>*>(comp) == nullptr)
 			{
 				delete comp;
@@ -57,7 +57,7 @@ namespace ComponentSystem
 			return nullptr;
 		}
 
-		// “¯‚¶ƒRƒ“ƒ|[ƒlƒ“ƒg‚ğ•¡”Š‚µ‚Ä‚¢‚éê‡‰½”Ô–Ú‚ğÁ‚·‚©(0~)
+		// åŒã˜ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’è¤‡æ•°æ‰€æŒã—ã¦ã„ã‚‹å ´åˆä½•ç•ªç›®ã‚’æ¶ˆã™ã‹(0~)
 		template <class C> void RmComp(short _index = 0)
 		{
 			for (auto itr{ this->components.begin() }; itr != this->components.end(); ++itr)
