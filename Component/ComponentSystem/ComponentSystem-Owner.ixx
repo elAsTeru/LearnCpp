@@ -1,4 +1,4 @@
-﻿// (C) 2023.7.1 elAsTeru. //
+﻿// (C) 2023.7.1 - 2023.7.2 elAsTeru. //
 
 export module ComponentSystem:Owner;
 import :Component;
@@ -29,6 +29,14 @@ namespace ComponentSystem
 				}
 			}
 			components.shrink_to_fit();
+		}
+
+		void Update()
+		{
+			for (auto comp : this->components)
+			{
+				comp->Update();
+			}
 		}
 
 		template <class C> C* AddComp()

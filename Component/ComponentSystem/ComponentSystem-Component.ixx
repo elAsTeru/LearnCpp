@@ -1,4 +1,4 @@
-﻿// (C) 2023.7.1 elAsTeru. //
+﻿// (C) 2023.7.1 - 2023.7.2 elAsTeru. //
 
 export module ComponentSystem:Component;
 
@@ -17,5 +17,6 @@ namespace ComponentSystem
 		O* owner;	// コンポーネントを所持しているインスタンス
 
 		virtual void Start() {}
+		virtual void Update() {}
 	};
 }

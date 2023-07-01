@@ -9,42 +9,50 @@ int main()
 	{
 		// GameObject用に作られたコンポーネントを付与
 		auto comp{ go->AddComp<Component::SelfIntroduction>() };
-		comp->Greeting();
+		comp->Update();
+
+		putchar('\n');
 
 		// GameObjectが持つ指定したコンポーネントを取得
 		comp = go->GetComp<Component::SelfIntroduction>();
-		comp->Greeting();
+		comp->Update();
 
-		// GameObjectに同じコンポーネント2つ目と3つ目を付与
-		comp = go->AddComp<Component::SelfIntroduction>();
-		comp = go->AddComp<Component::SelfIntroduction>();
-
-		// GameObjectが持つ指定した2番目のコンポーネントを削除
-		go->RmComp<Component::SelfIntroduction>(1);
-		// GameObjectが持つ指定した先頭のコンポーネントを削除
-		go->RmComp<Component::SelfIntroduction>();
-
-		comp = go->GetComp<Component::SelfIntroduction>();
-		if (comp != nullptr)
-		{
-			comp->Greeting();
-		}
+		putchar('\n');
 	}
 
 	// GameObjectの生成(生ポインタ)
 	GameObject* go2{ new GameObject("Player02", "Player") };
 	{
-		auto comp{ go2->AddComp<Component::SelfIntroduction>() };
-		comp->Greeting();
+		go2->AddComp<Component::SelfIntroduction>();
+		putchar('\n');
 
 		// 複数のコンポーネントを付与
-		for (int i{ 0 }; i < 2; ++i)
+		for (int i{ 0 }; i < 3; ++i)
 		{
 			go2->AddComp<Component::SelfIntroduction>();
 		}
+		putchar('\n');
 		
-		// 指定した2番目のコンポーネントを取得
-		comp = go2->GetComp<Component::SelfIntroduction>(1);
+		// まとめて更新
+		go2->Update();
+		putchar('\n');
+
+		// 指定した3番目と先頭のコンポーネントを削除
+		go2->RmComp<Component::SelfIntroduction>(2);
+		go2->RmComp<Component::SelfIntroduction>();
+		putchar('\n');
+
+		// 3番目が消せているか？
+		// 指定した3番目のコンポーネントを取得
+		auto comp = go2->GetComp<Component::SelfIntroduction>(2);
+		if (comp != nullptr)
+		{
+			comp->Update();
+		}
+		// 先頭を消したので2番目だったものが先頭になり更新される。
+		comp = go2->GetComp<Component::SelfIntroduction>();
+		comp->Update();
+		putchar('\n');
 		
 		// よくないがここで解放した場合にコンポーネントの解放処理で停止しないようにしたい。
 		//delete comp;
@@ -52,5 +60,10 @@ int main()
 
 	delete go2;
 	go2 = nullptr;
+	putchar('\n');
+
 	go.reset();
+	putchar('\n');
+
+	system("pause");
 }
