@@ -1,4 +1,6 @@
-﻿export module ComponentSystem:Component;
+﻿// (C) 2023.7.1 elAsTeru. //
+
+export module ComponentSystem:Component;
 
 namespace ComponentSystem
 {

@@ -1,4 +1,6 @@
-﻿export module ComponentSystem:Owner;
+﻿// (C) 2023.7.1 elAsTeru. //
+
+export module ComponentSystem:Owner;
 import :Component;
 import <vector>;
 
