@@ -3,6 +3,7 @@ import ComponentSystem;
 import GameObject;
 import <iostream>;
 
+
 namespace Component
 {
 	export class SelfIntroduction : public ComponentSystem::Component<GameObject>
@@ -14,7 +15,7 @@ namespace Component
 			std::cout << this->owner->name << " ended Component\n";
 		}
 
-		void Start() override
+		void Init() override
 		{
 			std::cout << this->owner->name << " started SelfIntroduction component.\n";
 		}

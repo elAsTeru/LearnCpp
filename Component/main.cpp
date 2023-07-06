@@ -55,7 +55,7 @@ int main()
 		putchar('\n');
 		
 		// よくないがここで解放した場合にコンポーネントの解放処理で停止しないようにしたい。
-		//delete comp;
+		comp = nullptr;
 	}
 
 	delete go2;

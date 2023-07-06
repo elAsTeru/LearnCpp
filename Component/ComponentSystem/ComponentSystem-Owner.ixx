@@ -31,6 +31,11 @@ namespace ComponentSystem
 			components.shrink_to_fit();
 		}
 
+	/*	void operator delete()
+		{
+
+		}*/
+
 		void Update()
 		{
 			for (auto comp : this->components)
@@ -51,7 +56,7 @@ namespace ComponentSystem
 			}
 			this->components.emplace_back(comp);
 			comp->owner = dynamic_cast<O*>(this);
-			comp->Start();
+			comp->Init();
 			return comp;
 		}
 

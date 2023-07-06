@@ -16,7 +16,7 @@ namespace ComponentSystem
 
 		O* owner;	// コンポーネントを所持しているインスタンス
 
-		virtual void Start() {}
+		virtual void Init() {}
 		virtual void Update() {}
 	};
 }
