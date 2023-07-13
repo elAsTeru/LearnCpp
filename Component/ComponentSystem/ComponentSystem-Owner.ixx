@@ -13,7 +13,7 @@ namespace ComponentSystem
 	class Owner
 	{
 	protected:
-		std::vector<Component<O>*> components;
+		std::vector<Component<O>*> components;	// private無くしたい
 
 	public:
 		Owner() {}
@@ -30,11 +30,6 @@ namespace ComponentSystem
 			}
 			components.shrink_to_fit();
 		}
-
-	/*	void operator delete()
-		{
-
-		}*/
 
 		void Update()
 		{

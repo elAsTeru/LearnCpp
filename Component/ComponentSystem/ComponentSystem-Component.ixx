@@ -12,7 +12,7 @@ namespace ComponentSystem
 		Component() :
 			owner(nullptr)
 		{}
-		virtual ~Component() {}
+		virtual ~Component(){}
 
 		O* owner;	// コンポーネントを所持しているインスタンス
 

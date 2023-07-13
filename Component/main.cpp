@@ -1,9 +1,12 @@
 import GameObject;
 import Component;
 import <memory>;
+import <iostream>;
 
 int main()
 {
+	std::cout << "Component System \n\n";
+
 	// GameObjectの生成(スマートポインタ)
 	std::shared_ptr<GameObject>go{ std::make_unique<GameObject>("Player01", "Player") };
 	{
@@ -66,4 +69,5 @@ int main()
 	putchar('\n');
 
 	system("pause");
+	return 0;
 }
