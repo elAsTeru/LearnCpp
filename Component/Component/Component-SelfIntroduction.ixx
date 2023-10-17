@@ -1,12 +1,12 @@
 ﻿export module Component:SelfIntroduction;
 import ComponentSystem;
-import GameObject;
+import TestObject;
 import <iostream>;
 
 
 namespace Component
 {
-	export class SelfIntroduction : public ComponentSystem::Component<GameObject>
+	export class SelfIntroduction : public ComponentSystem::Component<TestObject>
 	{
 	public:
 		SelfIntroduction(){}

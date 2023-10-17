@@ -27,13 +27,13 @@
     <ClCompile Include="ComponentSystem\ComponentSystem.ixx">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject\GameObject.ixx">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Component\Component-SelfIntroduction.ixx">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Component\Component.ixx">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="TestObject.ixx">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

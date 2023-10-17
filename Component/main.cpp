@@ -1,30 +1,31 @@
-import GameObject;
+import TestObject;
 import Component;
 import <memory>;
 import <iostream>;
 
+// Conponentを使用したTestObjectの利用
 int main()
 {
 	std::cout << "Component System \n\n";
 
-	// GameObjectの生成(スマートポインタ)
-	std::shared_ptr<GameObject>go{ std::make_unique<GameObject>("Player01", "Player") };
+	// TestObjectの生成(スマートポインタ)
+	std::shared_ptr<TestObject>go{ std::make_unique<TestObject>("Player01", "Player") };
 	{
-		// GameObject用に作られたコンポーネントを付与
+		// TestObject用に作られたコンポーネントを付与
 		auto comp{ go->AddComp<Component::SelfIntroduction>() };
 		comp->Update();
 
 		putchar('\n');
 
-		// GameObjectが持つ指定したコンポーネントを取得
+		// TestObjectが持つ指定したコンポーネントを取得
 		comp = go->GetComp<Component::SelfIntroduction>();
 		comp->Update();
 
 		putchar('\n');
 	}
 
-	// GameObjectの生成(生ポインタ)
-	GameObject* go2{ new GameObject("Player02", "Player") };
+	// TestObjectの生成(生ポインタ)
+	TestObject* go2{ new TestObject("Player02", "Player") };
 	{
 		go2->AddComp<Component::SelfIntroduction>();
 		putchar('\n');

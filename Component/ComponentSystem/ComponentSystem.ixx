@@ -7,16 +7,16 @@ export import :Owner;
 // コンポーネントを付与できるオブジェクトを指定できる
 // コンポーネントシステムを提供。
 
-// GameObject用とDX12用にコンポーネントを作ったとする。
-// GameObject用に作ったコンポーネントはDX12には使えない。
-// DX12用に作ったコンポーネントはGameObjectには使えない。
+// TestObject用とDX12用にコンポーネントを作ったとする。
+// TestObject用に作ったコンポーネントはDX12には使えない。
+// DX12用に作ったコンポーネントはTestObjectには使えない。
 
 // 改善可能要素
 
 // コンポーネントのプール化
 // コンポーネントごとにプールを持っており、
 // AddCompで未使用要素を渡す。
-// RmCompをしたらdeleteせずに、GameObjectから外すのみ。
+// RmCompをしたらdeleteせずに、TestObjectから外すのみ。
 // メモ
 // parentがnullptrのものは所有者がいない
 

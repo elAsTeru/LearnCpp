@@ -156,7 +156,7 @@
     <ClCompile Include="ComponentSystem\ComponentSystem.ixx" />
     <ClCompile Include="Component\Component-SelfIntroduction.ixx" />
     <ClCompile Include="Component\Component.ixx" />
-    <ClCompile Include="GameObject\GameObject.ixx" />
+    <ClCompile Include="TestObject.ixx" />
     <ClCompile Include="main.cpp">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCppModule</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsCppModule</CompileAs>
